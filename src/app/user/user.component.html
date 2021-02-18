@@ -1,5 +1,346 @@
-<button type="submit"
-class="btn btn-primary"
-[routerLink]="['/createUser']">
-  Create A User
+<h1>User List</h1>
+<br />
+
+
+<!--search users by -->
+<div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    aria-describedby="search-addon" />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
+
+<br>
+<!--Add A user Button-->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-toggle="modal"
+  data-target="#exampleModal"
+  data-whatever="@getbootstrap"
+>
+  + Add New User
 </button>
+
+<!-- Popover Add new user -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add A New User</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="RoleName-name" class="col-form-label">User Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="RoleName-name"
+              placeholder="Write The User Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="RoleName-name" class="col-form-label">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="RoleName-name"
+              placeholder="Write The User Name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Write User's email"
+            />
+          </div>
+<!--Role picker-->
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Roles" aria-label="Search"
+              aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+
+<!--solution-->
+<!--
+          <a class="nav-link dropdown-toggle hidden-arrow btn btn-primary"
+          href="#" id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false">
+          Roles
+        </a>
+        <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
+          <li>
+            <div class="input-group mt-2 mx-2">
+              <div class="form-outline">
+                <input type="search" id="form1" class="form-control-dropdown" />
+                <label class="form-label" for="form1">Search</label>
+              </div>
+            </div>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+
+        const searchInputDropdown = document.getElementById('search-input-dropdown');
+        const dropdownOptions = document.querySelectorAll('.input-group-dropdown-item');
+
+        searchInputDropdown.addEventListener('input', () => {
+          const filter = searchInputDropdown.value.toLowerCase();
+          showOptions();
+          const valueExist = !!filter.length;
+
+          if (valueExist) {
+            dropdownOptions.forEach((el) => {
+              const elText = el.textContent.trim().toLowerCase();
+              const isIncluded = elText.includes(filter);
+              if (!isIncluded) {
+                el.style.display = 'none';
+              }
+            });
+          }
+        });
+
+        const showOptions = () => {
+          dropdownOptions.forEach((el) => {
+            el.style.display = 'flex';
+          })
+        } -->
+
+
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Show Users List-->
+<table class="table">
+  <thead>
+    <tr>
+      <th>Client Name</th>
+      <th>Role</th>
+      <th>Last View</th>
+      <th class="mx-5"><span class="mx-7">Actions</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of tab2">
+      <td>UserName</td>
+      <td>RoleName</td>
+      <th>18/02/2021</th>
+
+      <td>
+        <!-- <center> -->
+        <button
+          class="btn btn-pill btn-outline-success mx-2"
+          data-toggle="modal"
+          data-target="#exampleModalCenter3"
+        >
+          More Info
+        </button>
+
+        <button
+          class="btn btn-pill btn-outline-primary mx-2"
+          data-toggle="modal"
+          data-target="#exampleModalCenter1"
+        >
+          Edit
+        </button>
+
+        <button
+          class="btn btn-pill btn-outline-danger mx-2"
+          data-toggle="modal"
+          data-target="#exampleModalCenter2"
+        >
+          Delete
+        </button>
+        <!-- </center> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- More info Popover -->
+<div
+  class="modal fade"
+  id="exampleModalCenter3"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          More Info about Role
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Priviliges</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Manage bills</li>
+          <li class="list-group-item">Operate operators</li>
+          <li class="list-group-item">Make ToDo List</li>
+          <li class="list-group-item">Manage Users</li>
+          <li class="list-group-item">Manage Roles</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popover of the update user -->
+<div
+  class="modal fade"
+  id="exampleModalCenter1"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          Update User's Data
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >User Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Write the New User Name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Write user's email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Role</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>Role 1</option>
+            <option>Role 2</option>
+            <option>Role 3</option>
+            <option>Role 4</option>
+            <option>Role 5</option>
+            <option>Add New Role</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popover for deleting a user -->
+<div
+  class="modal fade"
+  id="exampleModalCenter2"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Do You Really Want to Delete the User</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          NO
+        </button>
+        <button type="button" class="btn btn-primary">YES</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { UserComponent } from './user/user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateRoleComponent } from './create-role/create-role.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,10 @@ import { CreateUserComponent } from './create-user/create-user.component';
     LayoutComponent,
     ProjectsComponent,
     UserComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    CreateRoleComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule

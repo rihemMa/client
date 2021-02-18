@@ -8,7 +8,7 @@
           <div class="col-md-3 col-xl-2">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title mb-0">Profile Settings</h5>
+                <h5 class="card-title mb-0">Settings</h5>
               </div>
 
               <div class="list-group list-group-flush" role="tablist">
@@ -27,10 +27,8 @@
                   href="#acess"
                   role="tab"
                 >
-                Access rights                </a>
-
-
-
+                  Access rights
+                </a>
               </div>
             </div>
           </div>
@@ -42,8 +40,7 @@
                 id="account"
                 role="tabpanel"
               >
-
-              <!-- Public info-->
+                <!-- Public info-->
                 <div class="card">
                   <div class="card-header">
                     <h5 class="card-title mb-0">Public info</h5>
@@ -53,11 +50,10 @@
                     <form>
                       <div class="row">
                         <div class="col-md-8">
-
+                          
                           <!--UserName-->
                           <div class="mb-3">
-                            <label class="form-label"
-                            for="inputUsername">
+                            <label class="form-label" for="inputUsername">
                               User Name
                             </label>
                             <input
@@ -67,9 +63,11 @@
                               placeholder="Username"
                             />
                           </div>
+
+                          <!--password-->
                           <div class="mb-3">
-                            <label class="form-label" for="inputPasswordNew"
-                              > password</label
+                            <label class="form-label" for="inputPasswordNew">
+                              password</label
                             >
                             <input
                               type="password"
@@ -78,9 +76,7 @@
                               placeholder="password"
                             />
                           </div>
-
                         </div>
-
 
                         <!--Avatar-->
                         <div class="col-md-4">
@@ -104,8 +100,6 @@
                           </div>
                         </div>
                       </div>
-
-
                     </form>
                   </div>
                 </div>
@@ -168,74 +162,37 @@
                         />
                       </div>
 
-                      <div class="row">
-                        <div class="mb-3 col-md-6">
-                          <label class="form-label" for="inputCity">City</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputCity"
-                          />
-                        </div>
-                        <div class="mb-3 col-md-4">
-                          <label class="form-label" for="inputState"
-                            >State</label
-                          >
-                          <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                          </select>
-                        </div>
-                        <div class="mb-3 col-md-2">
-                          <label class="form-label" for="inputZip">Zip</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="inputZip"
-                          />
-                        </div>
-                      </div>
+                      <a href=" " title="Save">
+                        <button type="submit" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </a>
 
-                      <button type="submit" class="btn btn-primary">
-                        Save changes
-                      </button>
                     </form>
                   </div>
                 </div>
               </div>
 
-              
-              <div class="tab-pane fade"
-               id="acess"
-                role="tabpanel">
+              <!--Acess-->
+              <div class="tab-pane fade" id="acess" role="tabpanel">
                 <div class="card">
                   <div class="card-body">
-
-                    <form>
-                      <div class="mb-3">
-                        <label class="form-label"
-                        for="access"
-                          >Access</label
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label
+                          class="input-group-text"
+                          for="inputGroupSelect01"
                         >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="access"
-                        />
+                          Choose A Role
+                        </label>
                       </div>
-
-                      <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-                      </div>
-
-                      <button type="submit" class="btn btn-primary">
-                        Save changes
-                      </button>
-
-
-
-                    </form>
+                      <select class="custom-select" id="inputGroupSelect01">
+                        <option selected disabled>Choose...</option>
+                        <option value="1">CEO</option>
+                        <option value="2">CTO</option>
+                        <option value="3">CFO</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
